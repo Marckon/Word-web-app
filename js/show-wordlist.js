@@ -10,7 +10,7 @@ window.onload=function () {
             // code for IE6, IE5
             xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
         }
-        xmlHttp.open("GET","words-xml/CET-4 Easy.xml",false);
+        xmlHttp.open("GET","words-xml/wordlist.xml",false);
         xmlHttp.send();
         xmlDoc=xmlHttp.responseXML;
     //提取xml数据
@@ -44,7 +44,7 @@ window.onload=function () {
             var trans=document.createElement("td");
 
             //创建正则（提取关键释义）
-            var pattern=/\w+[.].+?\s/gi;//gi表示全文匹配，正则用两个反斜杠
+            var pattern=/\w+[.].+?(\s|$)/gi;//gi表示全文匹配，正则用两个反斜杠
             var str=transes[i].firstChild.nodeValue;
             var mean=str.match(pattern);
 
