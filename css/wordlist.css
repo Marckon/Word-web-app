@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: "Microsoft YaHei UI";
+}
+#nav{
+    height: 60px;
+    width: 1900px;
+    font:20pt/60px "Microsoft YaHei UI";
+    color: white;
+    text-indent: 50px;
+    background: black;
+
+}
+#nav ul{
+    text-indent: 0;
+    position:absolute;
+    list-style: none;
+    color: white;
+    font-size:12pt;
+    top:0px;
+    left:300px;
+}
+#nav li{
+    float: left;
+    cursor: pointer;
+    margin-left: 20px;
+    width: 110px;
+    font-family: Arial;
+    opacity: 0.5;
+}
+#nav li:hover{
+    opacity: 1;
+    background-color: darkslategrey;
+    transition:0.3s linear;
+}
+#wordlist{
+    margin:0 auto;
+    width: 1200px;
+}
+#wordlist td{
+    height: 100px;
+    /*border:black solid 1px;*/
+}
+.trans{
+    width:400px;
+}
+.word{
+    text-align: center;
+    width: 100px;
+    visibility: hidden;
+}
+.phonetic{
+    text-align: center;
+    width: 200px;
+    visibility: hidden;
+}
+.inputword{
+    width: 400px;
+    text-align: center;
+}
+.controlpanel{
+    margin:0 auto;
+    display: block;
+    width: 400px;
+}
+.controlpanel span{
+    margin-left: 10px;
+}
+#bottom{
+    width: 1900px;
+    height: 70px;
+    background-color: black;
+    margin-top: 50px ;
+}
+.checkico{
+    color: red;
+    display: inline-block;
+    margin-left: 10px;
+}
