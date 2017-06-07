@@ -48,12 +48,33 @@
 .word{
     text-align: center;
     width: 100px;
+    visibility: hidden;
 }
 .phonetic{
     text-align: center;
     width: 200px;
+    visibility: hidden;
 }
 .inputword{
     width: 400px;
     text-align: center;
+}
+.controlpanel{
+    margin:0 auto;
+    display: block;
+    width: 400px;
+}
+.controlpanel span{
+    margin-left: 10px;
+}
+#bottom{
+    width: 1900px;
+    height: 70px;
+    background-color: black;
+    margin-top: 50px ;
+}
+.checkico{
+    color: red;
+    display: inline-block;
+    margin-left: 10px;
 }
