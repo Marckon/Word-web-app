@@ -2,7 +2,7 @@
  * Created by lcz on 2017/6/6.
  */
 window.onload=function () {
-    //配置xml文件
+   /* //配置xml文件
         if(window.XMLHttpRequest){
             var xmlHttp=new XMLHttpRequest();
         }
@@ -12,7 +12,29 @@ window.onload=function () {
         }
         xmlHttp.open("GET","words-xml/wordlist.xml",false);
         xmlHttp.send();
-        xmlDoc=xmlHttp.responseXML;
+        xmlDoc=xmlHttp.responseXML;*/
+    try{//Internet Explorer
+        xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+        xmlDoc.async = "false";
+        //加载 XML文档,获取XML文档对象
+        xmlDoc.load("words-xml/wordlist.xml");
+    }catch(e){//Firefox, Mozilla, Opera, etc.
+        try{
+            xmlDoc=document.implementation.createDocument("","",null);
+            xmlDoc.async = "false";
+            //加载 XML文档,获取XML文档对象
+            xmlDoc.load("words-xml/wordlist.xml");
+        }catch(e){
+            try{//Google Chrome
+                var xmlhttp=new window.XMLHttpRequest();
+                xmlhttp.open("get","words-xml/wordlist.xml",false);
+                xmlhttp.send(null);
+                xmlDoc=xmlhttp.responseXML.documentElement;
+            }catch(e){
+                alert("您的浏览器不能正常加载文件。请切换到兼容模式，或者更换浏览器");
+            }
+        }
+    }
     //提取xml数据
         var wordlist=document.getElementById("wordlist");
         var words=xmlDoc.getElementsByTagName("word");
@@ -74,8 +96,8 @@ window.onload=function () {
         clientinput[i].onkeyup=function (e) {
             if(e.keyCode==13){
                 if(this.value==correctword[this.index].innerHTML){
-                    correctword[this.index].style.visibility="visible";
-                    correctphonetic[this.index].style.visibility="visible";
+                    correctword[this.index].style.opacity="1";
+                    correctphonetic[this.index].style.opacity="1";
                     checks[this.index].innerHTML="√";
                     clientinput[this.index+1].focus();//光标定位到下一个输入框
                 }

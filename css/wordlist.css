@@ -10,7 +10,6 @@
     color: white;
     text-indent: 50px;
     background: black;
-
 }
 #nav ul{
     text-indent: 0;
@@ -40,6 +39,7 @@
 }
 #wordlist td{
     height: 100px;
+    background-color: lightblue;
     /*border:black solid 1px;*/
 }
 .trans{
@@ -48,12 +48,16 @@
 .word{
     text-align: center;
     width: 100px;
-    visibility: hidden;
+    opacity: 0;
+}
+.word:hover{
+    opacity: 1;
+    transition: 0.2s linear;
 }
 .phonetic{
     text-align: center;
     width: 200px;
-    visibility: hidden;
+    opacity: 0;
 }
 .inputword{
     width: 400px;
